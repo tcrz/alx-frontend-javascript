@@ -1,4 +1,4 @@
-// Instantiate variabes using const
+// Instantiate variabes using const and let
 export function taskFirst() {
   const task = 'I prefer const when I can.';
   return task;
