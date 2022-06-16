@@ -10,7 +10,7 @@ export default class Building {
     const superclsProperties = Object.getOwnPropertyNames(superclsProto);
     superclsProperties.forEach((name) => {
       if (typeof superclsProto[name] === 'function' && !Object.prototype.hasOwnProperty.call(clsProto, name)) {
-        throw new TypeError('Class extending Building must override evacuationWarningMessage');
+        throw new Error('Class extending Building must override evacuationWarningMessage');
       }
     });
   }
