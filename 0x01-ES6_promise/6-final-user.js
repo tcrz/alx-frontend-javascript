@@ -6,9 +6,9 @@ export default function handleProfileSignup(firstName, lastName, fileName) {
   const photo = uploadPhoto(fileName);
   return Promise.allSettled([user, photo]).then((results) => {
     const newresults = results;
-    newresults[1].value = newresults[1].reason.message
+    newresults[1].value = `Error: ${newresults[1].reason.message}`;
     delete newresults[1].reason;
-    console.log(newresults)
+    // console.log(newresults)
     return newresults;
   });
 }
