@@ -11,18 +11,12 @@ export default function cleanSet(set, startString) {
     return startString;
   }
   const startStringLen = startString.length;
-  let setList = Array.from(set);
-  setList = setList.filter((str) => str.startsWith(startString));
   let concatStr = '';
-  for (const [idx, str] of setList.entries()) {
+  for (const str of set) {
     if (str.startsWith(startString)) {
       const splitstr = str.slice(startStringLen);
-      if (!setList[idx + 1]) {
-        concatStr += splitstr;
-      } else {
-        concatStr += `${splitstr}-`;
-      }
+      concatStr += `${splitstr}-`;
     }
   }
-  return concatStr;
+  return concatStr.slice(0, -1);
 }
