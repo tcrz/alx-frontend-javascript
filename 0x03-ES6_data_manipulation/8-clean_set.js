@@ -11,7 +11,7 @@ export default function cleanSet(set, startString) {
   const strArray = [];
   if (startString && typeof startString === 'string') {
     for (const str of set) {
-      if (str.startsWith(startString)) {
+      if (str && str.startsWith(startString)) {
         const splitstr = str.slice(startStringLen);
         strArray.push(splitstr);
       }
