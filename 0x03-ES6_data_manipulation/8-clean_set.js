@@ -16,8 +16,8 @@ export default function cleanSet(set, startString) {
         strArray.push(str.slice(startStringLen));
       }
     }
+    concatStr = strArray.join('-');
   }
-  concatStr = strArray.join('-');
   return concatStr;
 }
 
