@@ -7,15 +7,14 @@ The string contains all the values of the set separated by -.
 */
 
 export default function cleanSet(set, startString) {
-  if (startString === '') {
-    return startString;
-  }
   const startStringLen = startString.length;
   let concatStr = '';
-  for (const str of set) {
-    if (str.startsWith(startString)) {
-      const splitstr = str.slice(startStringLen);
-      concatStr += `${splitstr}-`;
+  if (startString && typeof startString === 'string') {
+    for (const str of set) {
+      if (str.startsWith(startString)) {
+        const splitstr = str.slice(startStringLen);
+        concatStr += `${splitstr}-`;
+      }
     }
   }
   return concatStr.slice(0, -1);
