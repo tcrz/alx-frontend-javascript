@@ -6,30 +6,32 @@ When a value starts with startString you only append the rest of the string.
 The string contains all the values of the set separated by -.
 */
 
-  // export default function cleanSet(set, startString) {
-  //   const startStringLen = startString.length;
-  //   const strArray = [];
-  //   if (startString && typeof startString === 'string') {
-  //     for (const str of set) {
-  //       if (str && str.startsWith(startString)) {
-  //         strArray.push(str.slice(startStringLen));
-  //       }
-  //     }
-  //   }
-  //   return strArray.join('-');
-  // }
-
 export default function cleanSet(set, startString) {
-  let text = '';
-  const array = [];
-
+  let concatStr = '';
+  const startStringLen = startString.length;
+  const strArray = [];
   if (startString && typeof startString === 'string') {
-    for (const element of set) {
-      if (element && element.startsWith(startString)) {
-        array.push(element.slice(startString.length));
+    for (const str of set) {
+      if (str && str.startsWith(startString)) {
+        strArray.push(str.slice(startStringLen));
       }
     }
-    text = array.join('-');
   }
-  return text;
+  concatStr = strArray.join('-');
+  return concatStr;
 }
+
+// export default function cleanSet(set, startString) {
+//   let text = '';
+//   const array = [];
+
+//   if (startString && typeof startString === 'string') {
+//     for (const element of set) {
+//       if (element && element.startsWith(startString)) {
+//         array.push(element.slice(startString.length));
+//       }
+//     }
+//     text = array.join('-');
+//   }
+//   return text;
+// }
