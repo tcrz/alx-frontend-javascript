@@ -8,14 +8,14 @@ The string contains all the values of the set separated by -.
 
 export default function cleanSet(set, startString) {
   const startStringLen = startString.length;
-  let concatStr = '';
+  const strArray = [];
   if (startString && typeof startString === 'string') {
     for (const str of set) {
       if (str.startsWith(startString)) {
         const splitstr = str.slice(startStringLen);
-        concatStr += `${splitstr}-`;
+        strArray.push(splitstr);
       }
     }
   }
-  return concatStr.slice(0, -1);
+  return strArray.join('-');
 }
