@@ -73,7 +73,7 @@ function executeWork(employee: DirectorInterface | TeacherInterface): string {
 console.log(executeWork(createEmployee(200)));
 console.log(executeWork(createEmployee(1000)));
 
-/* Usage of Striny literal type */
+/* Usage of String literal type */
 type Subject = 'Math' | 'History'
 
 function teachClass(subject: Subject): string {
