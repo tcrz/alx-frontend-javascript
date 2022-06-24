@@ -19,9 +19,29 @@ const student2: Student = {
   location: 'Austrialia'
 }
 
+
 const studentsArr: Student[] = [student1, student2]
-let table = ''
+
+const table = document.createElement('table');
+const tbody = document.createElement('tbody');
+const labelrow = document.createElement('tr');
+const label1 = document.createElement('th');
+const label2 = document.createElement('th');
+label1.textContent = 'Name';
+label2.textContent = 'Location';
+table.appendChild(label1)
+table.appendChild(label2)
+
+
 for (const student of studentsArr) {
-  table += `${student.firstName} ${student.location}\n`
+  const row = document.createElement('tr');
+  const nameField = document.createElement('td');
+  const locationField = document.createElement('td');
+  nameField.textContent = student.firstName;
+  locationField.textContent = student.location;
+  row.appendChild(nameField);
+  row.appendChild(locationField);
+  tbody.appendChild(row);
 }
-console.log(table)
+table.appendChild(tbody);
+document.body.appendChild(table);
