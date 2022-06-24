@@ -58,20 +58,20 @@ console.log(createEmployee('$500'));
 // Director
 
 /* Using Type Predicate to determine which object was passed as parameter */
-function isDirector(employee: Director | Teacher): employee is Director{
-    return (employee as Director).getToWork !== undefined;
+function isDirector(employee: DirectorInterface | TeacherInterface): employee is Director{
+    return (employee as Director).workDirectorTasks !== undefined;
 }
 
-function executeWork(employee: Director | Teacher): void {
+function executeWork(employee: DirectorInterface | TeacherInterface): string {
     if (isDirector(employee)){
-        console.log(employee.workDirectorTasks())
+        return employee.workDirectorTasks()
     } else {
-        console.log(employee.workTeacherTasks())
+        return (employee as TeacherInterface).workTeacherTasks()
     }
 }
 
-executeWork(createEmployee(200));
-executeWork(createEmployee(1000));
+console.log(executeWork(createEmployee(200)));
+console.log(executeWork(createEmployee(1000)));
 
 /* Usage of Striny literal type */
 type Subject = 'Math' | 'History'

@@ -10,5 +10,4 @@ const obj: RowElement = {
 const newRowID: RowID = CRUD.insertRow(obj)
 const updatedRow: RowElement = { firstName: "Guillaume", lastName: "Salva", age: 23 };
 CRUD.updateRow(newRowID, updatedRow);
-CRUD.deleteRow(125);
-console.log(newRowID)
+CRUD.deleteRow(newRowID);

@@ -19,5 +19,4 @@ namespace Subjects {
         }
 
     }
-    export const cppk = new Cpp()
 }

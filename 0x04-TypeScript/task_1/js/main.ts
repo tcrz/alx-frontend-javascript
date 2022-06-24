@@ -5,7 +5,7 @@ interface Teacher {
     fullTimeEmployee: boolean;
     yearsOfExperience?: number;
     location: string;
-    [key: string]: unknown;
+    [key: string]: any;
 }
 
 /* Directors Interface (extends Teacher Interface) */
@@ -29,6 +29,10 @@ interface StudentClassInterface{
     lastName: string;
     workOnHomework(): string;
     displayName(): string;
+}
+
+interface StudentConstructor {
+    new(firstName: string, lastName: string): StudentClassInterface;
 }
 
 /* StudentClass class */
