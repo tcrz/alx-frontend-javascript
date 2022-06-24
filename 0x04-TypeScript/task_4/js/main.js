@@ -1,0 +1,18 @@
+"use strict";
+exports.__esModule = true;
+var Teacher_1 = require("./subjects/Teacher");
+var Cpp_1 = require("./subjects/Cpp");
+var React_1 = require("./subjects/React");
+var Java_1 = require("./subjects/Java");
+console.log('C++');
+Cpp_1.cpp.setTeacher(Teacher_1.cTeacher);
+console.log(Cpp_1.cpp.getRequirements());
+console.log(Cpp_1.cpp.getAvailableTeacher());
+console.log('Java');
+Java_1.java.setTeacher(Teacher_1.cTeacher);
+console.log(Java_1.java.getRequirements());
+console.log(Java_1.java.getAvailableTeacher());
+console.log('React');
+React_1.react.setTeacher(Teacher_1.cTeacher);
+console.log(React_1.react.getRequirements());
+console.log(React_1.react.getAvailableTeacher());
